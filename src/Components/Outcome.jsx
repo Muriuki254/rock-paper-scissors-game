@@ -1,53 +1,51 @@
-import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-// Outcome component: Determines the outcome of the game based on player's and computer's picks
-// Starts
+import rockIcon from '../assets/icon-rock.svg';
+import paperIcon from '../assets/icon-paper.svg';
+import scissorsIcon from '../assets/icon-scissors.svg';
+import { Link } from "react-router-dom";
+import '../App.css'
+
 const Outcome = ({ playerPick, computerPick, playAgain }) => {
-  const [outcome, setOutcome] = useState("");
+  const icons = {
+    rock: rockIcon,
+    paper: paperIcon,
+    scissors: scissorsIcon,
+  };
 
-  useEffect(() => {
-    if (playerPick && computerPick) {
-      setOutcome(checkOutcome(playerPick, computerPick));
-    }
-  }, [playerPick, computerPick]);
-
-  const checkOutcome = (playerPick, computerPick) => {
-    const results = {
-      rock: {
-        rock: "Tie",
-        paper: "Computer Wins",
-        scissors: "Player Wins",
-      },
-      paper: {
-        rock: "Player Wins",
-        paper: "Tie",
-        scissors: "Computer Wins",
-      },
-      scissors: {
-        rock: "Computer Wins",
-        paper: "Player Wins",
-        scissors: "Tie",
-      },
-    };
-
+  const getOutcomeText = () => {
     if (playerPick === computerPick) {
-      return "Tie";
+      return "It's a Tie!";
+    } else if (
+      (playerPick === "rock" && computerPick === "scissors") ||
+      (playerPick === "paper" && computerPick === "rock") ||
+      (playerPick === "scissors" && computerPick === "paper")
+    ) {
+      return "You Win!";
     } else {
-      return results[playerPick][computerPick];
+      return "You Lose!";
     }
   };
 
-  if (!playerPick || !computerPick) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div>
-      <h2>Outcome</h2>
-      <div>{outcome}</div>
-      <button onClick={playAgain}>Play Again</button>
-      <h2>Computer Pick</h2>
-      <div>{computerPick}</div>
+    <div className="outcome">
+      <div className="outcome-icons">
+        <div className="player-icon">
+          <label className="picked-label">You Picked:</label>
+          <img src={icons[playerPick]} alt="" />
+        </div>
+        <div className="outcome-label">
+        <label className="outcome-text">{getOutcomeText()}</label>
+        <Link to="/">
+        <button onClick={playAgain}>Play Again</button>
+        </Link>
+        </div>
+        <div className="computer-icon">
+          <label className="picked-label">The Computer Picked:</label>
+          <img src={icons[computerPick]} alt="" />
+        </div>
+      </div>
+      
+      
     </div>
   );
 };
