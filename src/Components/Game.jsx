@@ -45,7 +45,7 @@ const Game = () => {
           } else if (outcome === "Computer Wins") {
             return { ...prevScore, computer: prevScore.computer + 1 };
           } else {
-            return { player: 0, computer: 0 }; // Set score to zero for both sides
+            return prevScore; // Set score to zero for both sides
           }
         });
       }
@@ -83,10 +83,10 @@ const Game = () => {
         
         
         <BrowserRouter>
-          <Score score={score} playAgain={playAgain} />
+          <Score score={score}  />
           <Routes>
             <Route path="/" element={<Picks handlePick={handlePick} />} />
-            <Route path="/outcome" element={<Outcome playerPick={pick} computerPick={computerPick} />} />
+            <Route path="/outcome" element={<Outcome playerPick={pick} computerPick={computerPick} playAgain={playAgain} />} />
             
           </Routes>
           <Rules />

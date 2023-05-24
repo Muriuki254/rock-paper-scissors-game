@@ -1,7 +1,7 @@
 import logo from '../assets/logo.svg'
 import PropTypes from "prop-types";
 
-const Score = ({ score, playAgain }) => {
+const Score = ({ score }) => {
     return (
       <>
       <div className="top">
@@ -15,13 +15,10 @@ const Score = ({ score, playAgain }) => {
           </ul>
         </div>
         </div>
-        
-       
+    
       </div>
 
-        <div>
-        <button onClick={playAgain}>Play Again</button>
-        </div>
+  
 </>
     );
   };
@@ -32,7 +29,6 @@ const Score = ({ score, playAgain }) => {
       player: PropTypes.number.isRequired,
       computer: PropTypes.number.isRequired,
     }).isRequired,
-    playAgain: PropTypes.func.isRequired,
   };
 
   export default Score;
