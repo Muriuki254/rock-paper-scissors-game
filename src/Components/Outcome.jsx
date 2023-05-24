@@ -45,6 +45,8 @@ const Outcome = ({ playerPick, computerPick }) => {
       <div>
         <h2>Outcome</h2>
         <div>{outcome}</div>
+        <h2>Computer Pick</h2>
+        <div>{computerPick}</div>
         
       </div>
 

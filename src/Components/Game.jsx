@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import Picks from "./Picks";
 import Rules from "./Rules";
 import Score from "./Score";
@@ -79,14 +80,22 @@ const Game = () => {
   
     return (
       <div>
-        {/* <h1>Rock, Paper, Scissors</h1> */}
-        <Score score={score} playAgain={playAgain} />
-        <Picks handlePick={handlePick} />
-        <h2>Computer Pick</h2>
-        <div>{computerPick}</div>
-        <Outcome playerPick={pick} computerPick={computerPick} />
         
-        <Rules />
+        
+        <BrowserRouter>
+          <Score score={score} playAgain={playAgain} />
+          <Routes>
+            <Route path="/" element={<Picks handlePick={handlePick} />} />
+            <Route path="/outcome" element={<Outcome playerPick={pick} computerPick={computerPick} />} />
+            
+          </Routes>
+          <Rules />
+        </BrowserRouter>
+         {/* <h2>Computer Pick</h2>
+         <div>{computerPick}</div> */}
+        
+        
+      
       </div>
     );
   };
