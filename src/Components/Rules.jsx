@@ -11,17 +11,13 @@ const Rules = () => {
 
   return (
     <div>
-      <button onClick={toggleImage}>
-        <img src={rulesImage} alt="Rules" />
-      </button>
+      
       {showImage && (
-        <div className="rules-overlay">
           <div className="rules-image">
             <img src={rulesImage} alt="Rules" />
           </div>
-          <button onClick={toggleImage}>Close</button>
-        </div>
       )}
+      <button onClick={toggleImage}>Show Rules</button>
     </div>
   );
 };
