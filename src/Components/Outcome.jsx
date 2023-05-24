@@ -14,23 +14,28 @@ const Outcome = ({ playerPick, computerPick, playAgain }) => {
 
   const getOutcomeText = () => {
     if (playerPick === computerPick) {
-      return "It's a Tie!";
+      return "It's a Tie🤞!";
     } else if (
       (playerPick === "rock" && computerPick === "scissors") ||
       (playerPick === "paper" && computerPick === "rock") ||
       (playerPick === "scissors" && computerPick === "paper")
     ) {
-      return "You Win!";
+      return "You Win🎉!";
     } else {
-      return "You Lose!";
+      return "You Lose 🙃!";
     }
   };
 
   return (
+    <>
+    <div className="label">
+    <label className="picked-label">You Picked:</label>
+    <label className="picked-label">The Computer Picked:</label>
+    </div>
     <div className="outcome">
       <div className="outcome-icons">
         <div className="player-icon">
-          <label className="picked-label">You Picked:</label>
+          
           <img src={icons[playerPick]} alt="" />
         </div>
         <div className="outcome-label">
@@ -39,14 +44,15 @@ const Outcome = ({ playerPick, computerPick, playAgain }) => {
         <button onClick={playAgain}>Play Again</button>
         </Link>
         </div>
+        
         <div className="computer-icon">
-          <label className="picked-label">The Computer Picked:</label>
+        
           <img src={icons[computerPick]} alt="" />
         </div>
+        
       </div>
-      
-      
     </div>
+    </>
   );
 };
 

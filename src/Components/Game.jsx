@@ -85,7 +85,7 @@ const Game = () => {
           <Route
             path="/outcome"
             element={
-              <Outcome
+              <Outcome 
                 playerPick={pick}
                 computerPick={computerPick}
                 playAgain={playAgain}
