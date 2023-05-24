@@ -79,7 +79,7 @@ const Game = () => {
   
     return (
       <div>
-        <h1>Rock, Paper, Scissors</h1>
+        {/* <h1>Rock, Paper, Scissors</h1> */}
         <Score score={score} playAgain={playAgain} />
         <Picks handlePick={handlePick} />
         <h2>Computer Pick</h2>
