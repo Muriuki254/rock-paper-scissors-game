@@ -1,12 +1,12 @@
 
 import './App.css'
-import Logic from './Logic'
+import Game from './Components/Game'
 
 function App() {
 
   return (
     <div>
-     <Logic />
+     <Game />
     </div>
   )
 }
