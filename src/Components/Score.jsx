@@ -1,20 +1,28 @@
-
+import logo from '../assets/logo.svg'
 import PropTypes from "prop-types";
 
 const Score = ({ score, playAgain }) => {
     return (
-      <div>
+      <>
+      <div className="top">
+        <img src={logo} alt="" />
+        <div className="top-right">
         <h2>Score</h2>
-        <div>
+        <div className="top-score">
           <ul>
             <li>Player: {score.player}</li>
             <li>Computer: {score.computer}</li>
           </ul>
         </div>
-        <div>
-          <button onClick={playAgain}>Play Again</button>
         </div>
+        
+       
       </div>
+
+        <div>
+        <button onClick={playAgain}>Play Again</button>
+        </div>
+</>
     );
   };
   // Score component ends

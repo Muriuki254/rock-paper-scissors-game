@@ -1,14 +1,17 @@
 import PropTypes from "prop-types";
+import rock from '../assets/icon-rock.svg'
+import paper from '../assets/icon-paper.svg'
+import scissors from '../assets/icon-scissors.svg'
 // Picks component: Allows the player to choose their pick (rock, paper, or scissors)
 // Starts
 const Picks = ({ handlePick }) => {
     return (
       <div>
         <h2>Your Pick</h2>
-        <div>
-          <button onClick={() => handlePick("rock")}>Rock</button>
-          <button onClick={() => handlePick("paper")}>Paper</button>
-          <button onClick={() => handlePick("scissors")}>Scissors</button>
+        <div className="button">
+          <button className="round-btn" onClick={() => handlePick("rock")}> <img src={rock} alt="" /> </button>
+          <button className="round-btn" onClick={() => handlePick("paper")}> <img src={paper} alt="" /></button>
+          <button className="round-btn" onClick={() => handlePick("scissors")}> <img src={scissors } alt="" /></button>
         </div>
       </div>
     );
