@@ -28,27 +28,25 @@ const Outcome = ({ playerPick, computerPick, playAgain }) => {
 
   return (
     <>
-    <div className="label">
-    <label className="picked-label">You Picked:</label>
-    <label className="picked-label">The Computer Picked:</label>
-    </div>
-    <div className="outcome">
-      <div className="outcome-icons">
+    <div className="outcome-container">
         <div className="player-icon">
-          
-          <img src={icons[playerPick]} alt="" />
+          <label className="picked-label">YOU PICKED</label>
+          <button className="picked-icon-player">
+             <img src={icons[playerPick]} alt="" />
+          </button>
         </div>
         <div className="outcome-label">
         <label className="outcome-text">{getOutcomeText()}</label>
         <Link to="/">
-        <button onClick={playAgain}>Play Again</button>
+        <button onClick={playAgain}>PLAY AGAIN</button>
         </Link>
         </div>
         
         <div className="computer-icon">
-        
-          <img src={icons[computerPick]} alt="" />
-        </div>
+        <label className="picked-label">THE COMPUTER PICKED</label>
+        <button className="picked-icon-computer">
+           <img src={icons[computerPick]} alt="" />
+        </button>
         
       </div>
     </div>
