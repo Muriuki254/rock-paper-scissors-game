@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import '../App.css'
 
 const Outcome = ({ playerPick, computerPick, playAgain }) => {
-  const icons = {
+  const icons = { //Maps each pick (rock, paper, scissors) to an icon
     rock: rockIcon,
     paper: paperIcon,
     scissors: scissorsIcon,
   };
 
-  const getOutcomeText = () => {
+  const getOutcomeText = () => { //Determines the outcome text based on the player's pick and the computer's pick.
     if (playerPick === computerPick) {
       return "It's a Tie🤞!";
     } else if (
