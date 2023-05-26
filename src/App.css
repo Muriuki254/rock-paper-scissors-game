@@ -42,7 +42,8 @@
 }
 
 .button {
-  padding: 4rem 0;
+  
+  padding: 3rem 0;
   gap: 5rem;
   display: flex;
   flex: wrap;
@@ -56,13 +57,21 @@
 
 
 .round-btn1 {
+  position: relative;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   background-color: #ccc;
   border: 10px solid hsl(349, 71%, 52%);
   box-shadow: 0 0 30px hsl(349, 70%, 56%);
-  transform: rotate(180deg) translate(60px, -60px);
+  transform: rotate(180deg) translate(80px, -70px);
+}
+
+.round-btn1  img {
+  /* position: absolute; */
+  width: 50px;
+  height: 50px;
+  transform: rotate(190deg);
 }
 
 .round-btn2 {
@@ -76,6 +85,12 @@
 
 }
 
+.round-btn2 img {
+  width: 50px;
+  height: 50px;
+  transform: rotate(190deg);
+}
+
 .round-btn3 {
 
   width: 150px;
@@ -86,6 +101,12 @@
   box-shadow: 0 0 30px hsl(39, 84%, 53%);
   transform: rotate(180deg) translate(0px, -70px);
 
+}
+
+.round-btn3 img {
+  width: 50px;
+  height: 50px;
+  transform: rotate(190deg);
 }
 
 .label {
