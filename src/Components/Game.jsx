@@ -36,14 +36,15 @@ const Game = () => {
     if (pick !== "") {
       const outcome = checkOutcome(pick, computerPick); //Checks the outcome of the game by calling the checkOutcome function with the player's pick and the computer's pick.
       setScore((prevScore) => {
-        if (outcome === "Player Wins") {
+        if (outcome == "Player Wins") {
           return { ...prevScore, player: prevScore.player + 1 };
-        } else if (outcome === "Computer Wins") {
+        } else if (outcome == "Computer Wins") {
           return { ...prevScore, computer: prevScore.computer + 1 };
         } else {
-          return { player: 0, computer: 0 }; // Reset scores to zero for both sides
+          return {player: prevScore.player, computer: prevScore.computer}; // Reset scores to zero for both sides
         }
       });
+      
     }
   }, [pick, computerPick]);
 
@@ -67,7 +68,7 @@ const Game = () => {
     };
 
     if (playerPick === computerPick) {
-      return "Tie";
+      return ["Tie"];
     } else {
       return results[playerPick][computerPick];
     }
